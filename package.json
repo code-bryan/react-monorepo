@@ -6,7 +6,8 @@
   "private":"true",
   "scripts": {
     "web:start": "yarn workspace web start",
-    "ext:start": "yarn workspace extension start"
+    "ext:start": "yarn workspace extension start",
+    "ext:build": "yarn workspace extension build"
   },
   "workspaces": {
     "packages": [

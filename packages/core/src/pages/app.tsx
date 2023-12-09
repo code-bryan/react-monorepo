@@ -1,24 +1,62 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import {
+  Image,
+  ImageSourcePropType,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
-export default function App() {
+export function App(): JSX.Element {
+  const platformValue = Platform.OS;
   return (
-    <View style={styles.root}>
-      <Text style={styles.paragraph}>Testing</Text>
-    </View>
-  ); 
+    <SafeAreaView style={styles.root}>
+      {/* On React Native for Web builds coming from CRA, TypeScript 
+          complains about the image type, so we cast it as a workaround  */}
+      <Text style={styles.text}>Hello d!</Text>
+      <View style={styles.platformRow}>
+        <Text style={styles.text}>Platform: </Text>
+        <View style={styles.platformBackground}>
+          <Text style={styles.platformValue}>{platformValue}</Text>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
   root: {
-    height: '100%',
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 10,
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
   },
-  paragraph: {
-    color: 'black',
-    fontWeight: '800',
-    fontSize: 20,
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: 20,
+  },
+  text: {
+    fontSize: 28,
+    fontWeight: "600",
+  },
+  platformRow: {
+    marginTop: 12,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  platformValue: {
+    fontSize: 28,
+    fontWeight: "500",
+  },
+  platformBackground: {
+    backgroundColor: "#ececec",
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: "#d4d4d4",
+    paddingHorizontal: 6,
+    borderRadius: 6,
+    alignItems: "center",
   }
 });

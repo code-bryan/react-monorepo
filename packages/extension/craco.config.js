@@ -1,9 +1,15 @@
 const webpack = require("webpack");
 const { getWebpackTools } = require("react-native-monorepo-tools");
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 const monorepoWebpackTools = getWebpackTools();
 
 module.exports = {
+  devServer: {
+    devMiddleware: {
+        writeToDisk: true,
+    },
+  },
   webpack: {
     configure: (webpackConfig) => {
       // Allow importing from external workspaces.
@@ -23,6 +29,15 @@ module.exports = {
       new webpack.DefinePlugin({
         __SUBPLATFORM__: JSON.stringify("browser-ext"),
       }),
+
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: './public/manifest.json',
+            to: './'
+          }
+        ]
+      })
     ],
   },
 };
