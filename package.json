@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "private":"true",
+  "scripts": {
+    "web:start": "yarn workspace web start"
+  },
   "workspaces": {
     "packages": [
       "packages/*"
