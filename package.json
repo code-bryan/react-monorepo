@@ -5,7 +5,8 @@
   "license": "MIT",
   "private":"true",
   "scripts": {
-    "web:start": "yarn workspace web start"
+    "web:start": "yarn workspace web start",
+    "ext:start": "yarn workspace extension start"
   },
   "workspaces": {
     "packages": [
