@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Image,
-  ImageSourcePropType,
   Platform,
   SafeAreaView,
   StyleSheet,
@@ -9,17 +7,18 @@ import {
   View,
 } from "react-native";
 
-export function App(): JSX.Element {
-  const platformValue = Platform.OS;
+type Props = {
+  platform: string;
+}
+
+export default function App({ platform }: Props): JSX.Element {
   return (
     <SafeAreaView style={styles.root}>
-      {/* On React Native for Web builds coming from CRA, TypeScript 
-          complains about the image type, so we cast it as a workaround  */}
-      <Text style={styles.text}>Hello d!</Text>
+      <Text style={styles.text}>Hello from React Native!</Text>
       <View style={styles.platformRow}>
         <Text style={styles.text}>Platform: </Text>
         <View style={styles.platformBackground}>
-          <Text style={styles.platformValue}>{platformValue}</Text>
+          <Text style={styles.platformValue}>{platform}</Text>
         </View>
       </View>
     </SafeAreaView>

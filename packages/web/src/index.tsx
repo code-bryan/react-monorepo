@@ -10,7 +10,7 @@ const element = document.getElementById('root') as Element;
 const root = ReactDOM.createRoot(element);
 root.render(
   <React.StrictMode>
-    <App />
+    <App platform='Web' />
   </React.StrictMode>
 );
 
