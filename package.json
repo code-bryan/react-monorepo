@@ -7,11 +7,17 @@
   "scripts": {
     "web:start": "yarn workspace web start",
     "ext:start": "yarn workspace extension start",
-    "ext:build": "yarn workspace extension build"
+    "ext:build": "yarn workspace extension build",
+    "mobile:start": "yarn workspace mobile start",
+    "mobile:ios": "yarn workspace mobile ios",
+    "mobile:android": "yarn workspace mobile android"
   },
   "workspaces": {
     "packages": [
       "packages/*"
+    ],
+    "nohoist": [
+      "**/*"
     ]
   },
   "devDependencies": {
