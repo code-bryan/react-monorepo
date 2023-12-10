@@ -10008,7 +10008,7 @@ react-is@^17.0.1:
 
 react-native-monorepo-tools@^1.2.1:
   version "1.2.1"
-  resolved "https://registry.npmjs.org/react-native-monorepo-tools/-/react-native-monorepo-tools-1.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-monorepo-tools/-/react-native-monorepo-tools-1.2.1.tgz#e96ea910d6e13d9f1df89e96682209ed203929e6"
   integrity sha512-WW0cEP+/lTTQLKU268PXZISXFgL1wlaftMcxn4Z4QGXMls7WS+BMhwIZcEy0zudTeXaM+ft4yeVqMcUWM8ofXg==
   dependencies:
     find-root "^1.1.0"
